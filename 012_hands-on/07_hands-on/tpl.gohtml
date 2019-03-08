@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Restaurant Details</title>
+    </head>
+    <body>
+            <h1>Welcome to {{ .Name }}!</h1>
+            <p>We are located at {{ .Location }}</p>
+            {{ range .Eat }}
+             <div>
+                <h2>{{ .Time}}:</h2>
+                    {{ range .Items}}
+                        <p>{{ .Name }}</p>
+                        <p>{{ .Price }}</p>
+                        <p>{{ .Nutrition.Calories }}</p>
+                        <p>{{ .Nutrition.Carbs }}</p>
+                        <p>{{ .Nutrition.Fats }}</p>
+                        <p>{{ .Nutrition.Proteins }}</p>
+                         <h4>Goes well with:</h4>
+                              {{ range .Sides}}
+                                  <p>{{ .Name }}</p>
+                             {{ end }}
+                    {{ end }}
+             </div>
+        {{ end }}
+    </body>
+</html>

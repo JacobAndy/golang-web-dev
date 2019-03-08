@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Restaurant Menu</title>
+    </head>
+    <body>
+    <h1>Todays availability:</h1>
+        {{ range . }}  
+           <div>
+                <h2>{{ .Time}}</h2>
+                {{ range .Serving}}
+                    <p>{{ . }}</p>
+                {{ end }}
+          </div>
+        {{ end }}
+    </body>
+</html>

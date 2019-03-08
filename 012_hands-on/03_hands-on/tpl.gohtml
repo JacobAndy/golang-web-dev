@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>California Hotels</title>
+    </head>
+    <body>
+        {{ range .}}
+            <div>
+                <h2>{{.Name}}</h2>
+                <section>
+                    <p>{{ .Address }}</p>
+                    <p>{{ .City }}</p>
+                    <p>{{ .Zip }}</p>
+                    <p>{{ .Region }}</p>
+                </section>
+            </div>
+        {{ end }}
+    </body>
+</html>
